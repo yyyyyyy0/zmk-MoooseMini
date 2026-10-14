@@ -61,6 +61,24 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+        shift_mclk: shift_mclk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Shift+MClick";
+            bindings
+                = <&macro_press &kp LSHIFT &mkp MCLK>
+                , <&macro_pause_for_release>
+                , <&macro_release &mkp MCLK &kp LSHIFT>;
+        };
+        ctrl_mclk: ctrl_mclk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Ctrl+MClick";
+            bindings
+                = <&macro_press &kp LCTRL &mkp MCLK>
+                , <&macro_pause_for_release>
+                , <&macro_release &mkp MCLK &kp LCTRL>;
+        };
     };
 
     behaviors {
